@@ -13,12 +13,14 @@ import java.util.Map;
 public class L29Util {
 
     /** The titles of every L29Keyword*/
-    public static final String SET_TEXT = "SET";
-    public static final String INCREASE_TEXT = "INCREASE";
-    public static final String DECREASE_TEXT = "DECREASE";
-    public static final String IF_TEXT = "IF";
-    public static final String ELSE_TEXT = "ELSE";
-    public static final String END_TEXT = "END";
+    public static final String SET_TEXT = "set";
+    public static final String INCREASE_TEXT = "increase";
+    public static final String DECREASE_TEXT = "decrease";
+    public static final String IF_TEXT = "if";
+    public static final String ELSE_TEXT = "else";
+    public static final String END_TEXT = "end";
+    public static final String AND_TEXT = "and";
+    public static final String OR_TEXT = "or";
 
     /** The instances of every L29Keyword*/
     private static final L29Keyword SET = new L29Keyword.SET();

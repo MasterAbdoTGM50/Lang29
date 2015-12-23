@@ -107,14 +107,14 @@ public abstract class L29Keyword {
 
             if(tmpArgs.length > 1) {
 
-                if(tmpArgs[1].equals("AND")) {
+                if(tmpArgs[1].equals(AND_TEXT)) {
 
                     return isConditionTrue(interpreter, new String[] {args[0], args[1], tmpArgs[0] })
                             && isConditionTrue(interpreter, Arrays.copyOfRange(tmpArgs, 2, tmpArgs.length));
 
                 }
 
-                if(tmpArgs[1].equals("OR")) {
+                if(tmpArgs[1].equals(OR_TEXT)) {
 
                     return isConditionTrue(interpreter, new String[] {args[0], args[1], tmpArgs[0]})
                             || isConditionTrue(interpreter, Arrays.copyOfRange(tmpArgs, 2, tmpArgs.length));
@@ -123,26 +123,26 @@ public abstract class L29Keyword {
 
             }
 
-            if (args[1].equals("EQUALS")) {
+            if (args[1].equals("=")) {
 
                 return valueOfArg(interpreter, args[0]).equals(valueOfArg(interpreter, args[2]));
 
-            } else if (args[1].equals("LARGERTHAN")) {
+            } else if (args[1].equals(">")) {
 
                 return (Integer.parseInt(valueOfArg(interpreter, args[0]))
                         > Integer.parseInt(valueOfArg(interpreter, args[2])));
 
-            } else if (args[1].equals("LARGERTHANOREQUALS")) {
+            } else if (args[1].equals(">=") || args[1].equals("=>")) {
 
                 return (Integer.parseInt(valueOfArg(interpreter, args[0]))
                         >= Integer.parseInt(valueOfArg(interpreter, args[2])));
 
-            } else if (args[1].equals("LESSERTHAN")) {
+            } else if (args[1].equals("<")) {
 
                 return (Integer.parseInt(valueOfArg(interpreter, args[0]))
                         < Integer.parseInt(valueOfArg(interpreter, args[2])));
 
-            } else if (args[1].equals("LESSERTHANOREQUALS")) {
+            } else if (args[1].equals("<=") || args[1].equals("=<")) {
 
                 return (Integer.parseInt(valueOfArg(interpreter, args[0]))
                         <= Integer.parseInt(valueOfArg(interpreter, args[2])));

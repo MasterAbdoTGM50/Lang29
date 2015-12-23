@@ -1,0 +1,4 @@
+set x to 12
+if x > y and z > y
+set result_1 to the value of x was overridden from another script
+end

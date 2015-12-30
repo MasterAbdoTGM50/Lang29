@@ -14,6 +14,7 @@ public class L29Util {
 
     /** The titles of every L29Keyword*/
     public static final String SET_TEXT = "set";
+    public static final String JOIN_TEXT = "join";
     public static final String INCREASE_TEXT = "increase";
     public static final String DECREASE_TEXT = "decrease";
     public static final String IF_TEXT = "if";
@@ -24,6 +25,7 @@ public class L29Util {
 
     /** The instances of every L29Keyword*/
     private static final L29Keyword SET = new L29Keyword.SET();
+    private static final L29Keyword JOIN = new L29Keyword.JOIN();
     private static final L29Keyword INCREASE = new L29Keyword.INCREASE();
     private static final L29Keyword DECREASE = new L29Keyword.DECREASE();
     private static final L29Keyword IF = new L29Keyword.IF();
@@ -33,6 +35,7 @@ public class L29Util {
     static {
 
         keywords.put(SET.title, SET);
+        keywords.put(JOIN.title, JOIN);
         keywords.put(INCREASE.title, INCREASE);
         keywords.put(DECREASE.title, DECREASE);
         keywords.put(IF.title, IF);

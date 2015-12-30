@@ -48,6 +48,22 @@ public abstract class L29Keyword {
 
     }
 
+    public static class JOIN extends L29Keyword {
+
+        public JOIN() { super(JOIN_TEXT); }
+
+        @Override
+        public void execute(L29Interpreter interpreter, String[] args) {
+
+            String base = interpreter.getValue(args[0]);
+            String increase = valueOfArg(interpreter, args[2]);
+
+            interpreter.setValue(args[0], base + increase);
+
+        }
+
+    }
+
     public static class INCREASE extends L29Keyword {
 
         public INCREASE() { super(INCREASE_TEXT); }

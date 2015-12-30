@@ -30,13 +30,6 @@ public class L29Interpreter {
      */
     public L29Interpreter() {}
 
-    /**
-     * Constructs an empty L29Interpreter object.
-     *
-     * @param fileName the directory of the script to be opened
-     */
-    public L29Interpreter(String fileName) { openFile(fileName); }
-
     /** Executes the currently opened script. */
     public void execute() {
 
@@ -45,14 +38,19 @@ public class L29Interpreter {
         try {
 
             while ((currentLine = reader.readLine()) != null) {
-                //To be honest the best way to tokenize is by performing two-step split: by statements(like ; in c#) and by modifiers
+
+                //Itaros: To be honest the best way to tokenize is by performing two-step split:
+                //by statements(like ; in c#) and by modifiers
                 args = currentLine.split(" ", 4);
+
                 //Checking if it is possible to tokenize after splitting
                 if(args.length > 0) {
-                    String firstToken = args[0];//Taking first token and assuming it is keyword to execute
-                    if (L29Util.isKeyword(firstToken)) {
 
-                        L29Util.getKeyword(firstToken).execute(this, Arrays.copyOfRange(args, 1, args.length));
+                    String firstArg = args[0];//Taking first token and assuming it is keyword to execute
+
+                    if (L29Util.isKeyword(firstArg)) {
+
+                        L29Util.getKeyword(firstArg).execute(this, Arrays.copyOfRange(args, 1, args.length));
 
                     }
                 }

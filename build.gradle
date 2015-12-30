@@ -7,3 +7,11 @@ sourceSets.main.java.srcDirs += 'src'
 sourceSets.main.resources.srcDirs += 'res'
 
 repositories { mavenCentral() }
+
+task buildSources(type: Jar, dependsOn: classes ) {
+
+    from sourceSets.main.allSource
+    classifier = 'sources'
+    //exlude sourceSets.main.resources
+
+}

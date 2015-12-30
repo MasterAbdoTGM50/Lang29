@@ -1,9 +1,12 @@
 set x to 4
 set y to 8
 set z to 12
+set i to wor
+set j to ks
+join i to j
 if x > y and z > y
 set result_1 to true
 else
 set result_1 to false
 end
-set result_2 to We reached the statement after the f correctly
+set result_2 to i

@@ -1,0 +1,7 @@
+-Do the following acting upon Itaros's advcie
+    consider building token graph on read instead of executing. That way you can:
+    a)precache script for repeated execution
+    b)multithread it and do not block behind IO
+    c)Instrument at runtime(aka reflection)
+    d)Debug flow
+- read this http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-335.pdf

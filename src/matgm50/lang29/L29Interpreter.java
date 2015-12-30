@@ -45,14 +45,17 @@ public class L29Interpreter {
         try {
 
             while ((currentLine = reader.readLine()) != null) {
-
+                //To be honest the best way to tokenize is by performing two-step split: by statements(like ; in c#) and by modifiers
                 args = currentLine.split(" ", 4);
-                if(L29Util.isKeyword(args[0])) {
+                //Checking if it is possible to tokenize after splitting
+                if(args.length > 0) {
+                    String firstToken = args[0];//Taking first token and assuming it is keyword to execute
+                    if (L29Util.isKeyword(firstToken)) {
 
-                    L29Util.getKeyword(args[0]).execute(this, Arrays.copyOfRange(args, 1, args.length));
+                        L29Util.getKeyword(firstToken).execute(this, Arrays.copyOfRange(args, 1, args.length));
 
+                    }
                 }
-
             }
 
         } catch (IOException e) { e.printStackTrace(); }
